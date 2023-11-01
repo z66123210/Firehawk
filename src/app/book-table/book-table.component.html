@@ -1,0 +1,39 @@
+<div>
+  <label for="search">Search book by title:</label>
+  <input
+    type="text"
+    [(ngModel)]="searchTerm"
+    placeholder="Search Books"
+    (input)="searchBooks(searchTerm)"
+    name="search"
+  />
+</div>
+<div>
+  <label>Filter by Genre:</label>
+  <select [(ngModel)]="selectedGenre" (change)="filterByGenre()">
+    <option value="">All Genres</option>
+    <option *ngFor="let genre of genres" [value]="genre">{{ genre }}</option>
+  </select>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th (click)="sortBy('Title')">Title (Click to Sort)</th>
+      <th>Author</th>
+      <th>ISBN</th>
+      <th>Genre/Category</th>
+      <th>Publication Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let book of filteredBooks">
+      <td>{{ book.Title }}</td>
+      <td>{{ book.Author }}</td>
+      <td>{{ book.ISBN }}</td>
+      <td>{{ book.Genre }}</td>
+      <td>{{ book["Publication Date"].toDate() | date }}</td>
+      <!-- <td>{{ book.publicationDate.toDate() | date }}</td> -->
+    </tr>
+  </tbody>
+</table>

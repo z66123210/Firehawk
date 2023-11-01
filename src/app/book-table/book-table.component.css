@@ -1,0 +1,59 @@
+/* Add these styles to your component's CSS file (e.g., book-table.component.css) */
+
+/* Container styles */
+.container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Search input and filter dropdown styles */
+label {
+  font-weight: bold;
+}
+
+input[type="text"] {
+  width: 98%;
+  padding: 10px;
+  margin: 5px 0px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Table styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th {
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+  padding: 12px;
+  text-align: left;
+}
+
+th:hover {
+  background-color: #45a049;
+}
+
+td {
+  padding: 10px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Apply styles to the selected row (filtered/sorted items) */
+.selected {
+  background-color: #8ab6e2;
+}
